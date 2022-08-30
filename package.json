@@ -1,0 +1,16 @@
+{
+  "name": "service-worker-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev:debug":"node --inspect app.js"
+  },
+  "keywords": [],
+  "author": "Harikrushna Patel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^gh.18.1"
+  }
+}
