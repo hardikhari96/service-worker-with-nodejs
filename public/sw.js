@@ -1,6 +1,7 @@
 const cacheKeepList = ["v6","v7"];
 const currentVersion = "v7";
 
+// add resources to cache with version
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open(currentVersion);
   await cache.addAll(resources);
@@ -18,6 +19,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
+// handle offline resources
 const putInCache = async (request, response) => {
   const cache = await caches.open(currentVersion);
   await cache.put(request, response);
