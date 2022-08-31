@@ -1,14 +1,20 @@
-const cacheKeepList = ["v6","v7"];
-const currentVersion = "v7";
-
+const cacheKeepList = ["v12"];
+const currentVersion = "v12";
+const forceClearCache = true
+// https://stackoverflow.com/questions/40100922/activate-updated-service-worker-on-refresh
 // add resources to cache with version
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open(currentVersion);
   await cache.addAll(resources);
 };
 
+// remove all cache forcefully
+
+
 self.addEventListener("install", (event) => {
   console.log("Installing");
+  // forcefully remove cache
+  if (forceClearCache) self.skipWaiting();
   event.waitUntil(
     addResourcesToCache([
       "/",
